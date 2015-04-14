@@ -27,8 +27,8 @@ public class MongoDBLog {
   @Field(value = "time")
   private long time;
   
-  @Field(value = "exec")
-  private String exec;
+  @Field(value = "type")
+  private String type;
   
   @Field(value = "action")
   private String action;
@@ -69,18 +69,18 @@ public class MongoDBLog {
 
 
   /**
-   * @return the exec
+   * @return the type
    */
-  public String getExec() {
-    return exec;
+  public String getType() {
+    return type;
   }
 
 
   /**
-   * @param exec the exec to set
+   * @param exec the type to set
    */
-  public void setExec(String exec) {
-    this.exec = exec;
+  public void setType(String type) {
+    this.type = type;
   }
 
 
@@ -117,6 +117,6 @@ public class MongoDBLog {
   public String toString() {
     SimpleDateFormat df2 = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss");
     String time = df2.format(getTime());
-    return "[id: '" + id + "', start_time: '" + time + "', param: '" + param + "', exec: '" + exec + "', action: '" + action + "']";
+    return "[id: '" + id + "', start_time: '" + time + "', param: '" + param + "', type: '" + type + "', action: '" + action + "']";
   }
 }
